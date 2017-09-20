@@ -10,7 +10,7 @@ import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
 import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory;
 
 @PageEntry(title = "Письмо")
-public class Message extends BasePage{
+public class Message extends BasePage {
 
     @ElementTitle("Отправитель")
     @FindBy(xpath = "//span[contains (@class,'mail-Message-Sender-Email')]")

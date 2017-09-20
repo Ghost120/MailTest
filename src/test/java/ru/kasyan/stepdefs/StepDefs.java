@@ -4,11 +4,14 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.sbtqa.tag.pagefactory.PageFactory;
 import ru.sbtqa.tag.pagefactory.exceptions.PageException;
-import ru.sbtqa.tag.pagefactory.exceptions.PageInitializationException;
+import ru.sbtqa.tag.pagefactory.support.ScreenShooter;
 
 /**
  * Created by Kasyanenko Konstantin
@@ -22,7 +25,9 @@ public class StepDefs {
         LOG.info("email: " + email);
         LOG.info("тема: " + tema);
         String xpath = String.format("//span[@title='%s']/../../..//span[@title='%s']", email, tema);
-        PageFactory.getDriver().findElement(By.xpath(xpath)).click();
+        WebElement message = (new WebDriverWait(PageFactory.getDriver(), 5)).until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+        ScreenShooter.takeWithDriver();
+        message.click();
     }
 
     @Then("^пользователь проверет текст \"(.*)\" на элементе \"(.*)\"$")

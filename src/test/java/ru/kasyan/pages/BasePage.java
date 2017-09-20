@@ -14,8 +14,12 @@ public class BasePage extends Page {
     @FindBy(xpath = "//div[contains(@class, 'js-user-picture')]")
     public WebElement iconProfile;
 
+    @ElementTitle("Имя профиля")
+    @FindBy(xpath = "//div[@class='mail-User-Name']")
+    public WebElement nameProfile;
+
     @ElementTitle("Выход")
-    @FindBy(xpath = "//div/a[contains(text(), 'Выход')]")
+    @FindBy(xpath = "//div/a[text() = 'Выход']")
     public WebElement exitButton;
 
     public BasePage() {

@@ -10,7 +10,7 @@ import ru.sbtqa.tag.cucumber.TagCucumber;
  */
 @RunWith(TagCucumber.class)
 @CucumberOptions(monochrome = true, format = {"pretty"},
-        glue = {"ru.sbt.webdriver.stepdefs","ru.sbtqa.tag.pagefactory.stepdefs","ru.kasyan.stepdefs"},
+        glue = {"ru.sbt.webdriver.stepdefs", "ru.sbtqa.tag.pagefactory.stepdefs", "ru.kasyan.stepdefs"},
         features = {"src/test/resources/features/"},
         tags = {"@smokeTest"})
 public class CucumberTest {

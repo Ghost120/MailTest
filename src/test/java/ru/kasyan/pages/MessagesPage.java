@@ -14,7 +14,7 @@ import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementLocatorFactory
  * on 19.09.2017.
  */
 @PageEntry(title = "Яндекс почта")
-public class MessagesPage extends BasePage{
+public class MessagesPage extends BasePage {
     public MessagesPage() {
         PageFactory.initElements(
                 new HtmlElementDecorator(new HtmlElementLocatorFactory(PageFactory.getDriver())), this);
