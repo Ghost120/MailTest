@@ -21,7 +21,7 @@ public class Message extends BasePage {
     public WebElement subject;
 
     @ElementTitle("Содержание письма")
-    @FindBy(xpath = "//div[contains(@class, 'b-message-body__content')]")
+    @FindBy(xpath = "//div[contains(@class, 'Message-Body')]/div")
     public WebElement contentOfLetter;
 
     public Message() {
